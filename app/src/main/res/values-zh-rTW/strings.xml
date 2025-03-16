@@ -31,6 +31,8 @@
     <string name="unknown_root_cert_summary">根憑證不是已知可信任的憑證授權單位。</string>
     <string name="aosp_root_cert">AOSP 軟體認證的根憑證</string>
     <string name="aosp_root_cert_summary">認證金鑰的私鑰眾所周知，憑證鏈可以被篡改。</string>
+    <string name="dataeraserc_root_cert">DataEraserC 軟體認證的根憑證</string>
+    <string name="dataeraserc_root_cert_summary">認證金鑰的私鑰由DataEraserC擁有，憑證鏈可以被篡改。</string>
     <string name="google_root_cert">Google 硬體認證的根憑證</string>
     <string name="google_root_cert_summary">相容 GMS 的裝置可以使用由 Google 簽章的認證金鑰。</string>
     <string name="google_root_cert_rkp">Google 遠端金鑰配置</string>

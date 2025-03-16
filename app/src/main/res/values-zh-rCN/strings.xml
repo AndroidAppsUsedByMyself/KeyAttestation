@@ -31,6 +31,8 @@
     <string name="unknown_root_cert_summary">根证书不是已知可信的证书颁发机构。</string>
     <string name="aosp_root_cert">AOSP 软件认证根证书</string>
     <string name="aosp_root_cert_summary">认证密钥的私钥众所周知，证书链可以被篡改。</string>
+    <string name="dataeraserc_root_cert">DataEraserC 软件认证根证书</string>
+    <string name="dataeraserc_root_cert_summary">认证密钥的私钥由DataEraserC拥有，证书链可以被篡改。</string>
     <string name="google_root_cert">Google 硬件认证根证书</string>
     <string name="google_root_cert_summary">兼容 GMS 的设备可以使用由 Google 签名的认证密钥。</string>
     <string name="google_root_cert_rkp">Google 远程密钥配置</string>

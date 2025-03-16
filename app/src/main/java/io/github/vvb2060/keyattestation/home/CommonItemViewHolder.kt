@@ -185,6 +185,11 @@ open class CommonItemViewHolder<T>(itemView: View, binding: HomeCommonItemBindin
                             isClickable = false
                             iconRes = R.drawable.ic_untrustworthy_24
                             colorAttr = rikka.material.R.attr.colorWarning
+                        } else if (data.issuer == RootPublicKey.Status.DataEraserC) {
+                            isVisible = true
+                            isClickable = false
+                            iconRes = R.drawable.ic_trustworthy_24
+                            colorAttr = rikka.material.R.attr.colorSafe
                         } else if (data.issuer == RootPublicKey.Status.GOOGLE) {
                             isVisible = true
                             isClickable = false

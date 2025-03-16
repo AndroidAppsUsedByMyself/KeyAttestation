@@ -56,6 +56,13 @@ class HomeAdapter(listener: Listener) : IdBasedRecyclerViewAdapter() {
                         R.drawable.ic_error_outline_24,
                         rikka.material.R.attr.colorWarning), ID_CERT_STATUS)
             }
+            RootPublicKey.Status.DataEraserC -> {
+                addItem(HeaderViewHolder.CREATOR, HeaderData(
+                        R.string.dataeraserc_root_cert,
+                        R.string.dataeraserc_root_cert_summary,
+                        R.drawable.ic_trustworthy_24,
+                    rikka.material.R.attr.colorSafe), ID_CERT_STATUS)
+            }
             RootPublicKey.Status.GOOGLE -> {
                 addItem(HeaderViewHolder.CREATOR, HeaderData(
                         R.string.google_root_cert,

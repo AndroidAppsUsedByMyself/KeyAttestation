@@ -19,6 +19,7 @@ public class RootPublicKey {
         FAILED,
         UNKNOWN,
         AOSP,
+        DataEraserC,
         GOOGLE,
         GOOGLE_RKP,
         KNOX,
@@ -49,6 +50,16 @@ public class RootPublicKey {
             MdsGUmX4RFlXYfC78hdLt0GAZMAoDo9Sd47b0ke2RekZyOmLw9vCkT/X11DEHTVm\
             +Vfkl5YLCazOkjWFmwIDAQAB""";
 
+    private static final String DataEraserC_ROOT_EC_PUBLIC_KEY = """
+            MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEHGQg4HEDZuhE1B++IURvEoieUCQg1VLY2kjYD2mV\
+            THG0hjcEtittIZGBPJ3KDjOHcWiwz7aaiw8xSXmYbhZkdQ==""";
+
+    private static final String DataEraserC_ROOT_RSA_PUBLIC_KEY = """
+            MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCia63rbi5EYe/VDoLmt5TRdSMf\
+            d5tjkWP/96r/C3JHTsAsQ+wzfNes7UA+jCigZtX3hwszl94OuE4TQKuvpSe/lWmg\
+            MdsGUmX4RFlXYfC78hdLt0GAZMAoDo9Sd47b0ke2RekZyOmLw9vCkT/X11DEHTVm\
+            +Vfkl5YLCazOkjWFmwIDAQAB""";
+
     private static final String KNOX_SAKV1_ROOT_PUBLIC_KEY = """
             MIGbMBAGByqGSM49AgEGBSuBBAAjA4GGAAQBs9Qjr//REhkXW7jUqjY9KNwWac4r\
             5+kdUGk+TZjRo1YEa47Axwj6AJsbOjo4QsHiYRiWTELvFeiuBsKqyuF0xyAAKvDo\
@@ -70,6 +81,7 @@ public class RootPublicKey {
     private static final byte[] googleKey = Base64.decode(GOOGLE_ROOT_PUBLIC_KEY, 0);
     private static final byte[] aospEcKey = Base64.decode(AOSP_ROOT_EC_PUBLIC_KEY, 0);
     private static final byte[] aospRsaKey = Base64.decode(AOSP_ROOT_RSA_PUBLIC_KEY, 0);
+    private static final byte[] dataerasercEcKey = Base64.decode(DataEraserC_ROOT_EC_PUBLIC_KEY, 0);
     private static final byte[] knoxSakv1Key = Base64.decode(KNOX_SAKV1_ROOT_PUBLIC_KEY, 0);
     private static final byte[] knoxSakv2Key = Base64.decode(KNOX_SAKV2_ROOT_PUBLIC_KEY, 0);
     private static final byte[] knoxSakmv1Key = Base64.decode(KNOX_SAKMV1_ROOT_PUBLIC_KEY, 0);
@@ -109,6 +121,8 @@ public class RootPublicKey {
     public static Status check(byte[] publicKey) {
         if (Arrays.equals(publicKey, googleKey)) {
             return Status.GOOGLE;
+        } else if (Arrays.equals(publicKey, dataerasercEcKey)) {
+            return Status.DataEraserC;
         } else if (Arrays.equals(publicKey, aospEcKey)) {
             return Status.AOSP;
         } else if (Arrays.equals(publicKey, aospRsaKey)) {
